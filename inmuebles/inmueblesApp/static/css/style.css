@@ -1,0 +1,153 @@
+/* Estilo global para el fondo de la página */
+body {
+    background-color: #FDE8D5; /* Color de fondo */
+    position: relative;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos la altura completa de la ventana */
+    padding-bottom: 80px; /* Espacio inferior para que el contenido no quede oculto por el footer */
+}
+
+.background-image {
+    position: fixed;
+    bottom: 0;
+    right: 0; /* Cambiado a la esquina inferior derecha */
+    width: 50%;
+    height: 50%;
+    background-image: url('/static/img/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    z-index: -1; /* Asegúrate de que la imagen esté detrás del contenido */
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #223459;
+}
+
+.navbar-title {
+    color: #F2DFCE;
+}
+
+.nav-link {
+    color: #FDE8D5; 
+}
+
+.nav-link:hover {
+    color: #F2A950;
+}
+
+.btn-link {
+    color: #FDE8D5; /* Color del botón de cerrar sesión */
+}
+
+.btn-link:hover {
+    color: #F2A950;
+}
+
+/* Estilo para los formularios de registro y actualización de perfiles */
+.profile-form {
+    background-color: rgba(107, 191, 176, 0.462);
+    padding: 20px;
+    border: 1px solid #F2DFCE; 
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-form .form-label {
+    color: #223459; /* Color del texto de las etiquetas */
+}
+
+.profile-form .form-control {
+    border-color: #124559; /* Color del borde del campo */
+}
+
+.profile-form .btn-primary {
+    background-color: #124559;
+    border-color: #124559;
+}
+
+.profile-form .btn-primary:hover {
+    background-color: #6BBFB0;
+    border-color: #6BBFB0;
+}
+
+.profile-form .btn-secondary {
+    background-color: #F2A950; /* Color del botón cancelar */
+    border-color: #F2A950; 
+}
+
+.profile-form .btn-secondary:hover {
+    background-color: #F2DFCE;
+    border-color: #F2DFCE; 
+}
+
+/* FORMULARIOS */
+.form-group {
+    font-weight: bold;
+}
+
+.form-control {
+    border: 1px solid #124559;
+}
+
+.form-select {
+    border: 1px solid #124559;
+}
+
+/* Estilo para los botones */
+.btn-primary {
+    background-color: #124559; 
+    border-color: #124559; 
+}
+
+.btn-primary:hover {
+    background-color: #6BBFB0;
+    border-color: #6BBFB0;
+}
+
+/* Estilo para la tarjeta */
+.card {
+    background-color: #FFFFFF; 
+    border: 1px solid #F2DFCE;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.card-header {
+    background-color: #223459; 
+    color: #F2DFCE; 
+}
+
+
+/* FOOTER */
+footer {
+    background-color: #223459;
+    color: #F2DFCE;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 1000;
+}
+
+/* Botones sociales en el footer */
+.btn-social {
+    color: #F2DFCE;
+    border-color: #F2DFCE;
+}
+
+.btn-social:hover {
+    background-color: #6BBFB0; 
+    color: #223459;
+}
+
+.btn-outline-light {
+    border-color: #F2DFCE;
+    color: #F2DFCE; 
+}
+
+.btn-outline-light:hover {
+    background-color: #F2DFCE;
+    color: #223459;
+}

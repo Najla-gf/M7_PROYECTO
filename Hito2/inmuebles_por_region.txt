@@ -1,0 +1,17 @@
+Listado de Inmuebles por Región:
+
+Región: Región Metropolitana de Santiago
+Nombre: Hogar familiar
+Descripción: Casa ubicada en tranquilo barrio residencial. 5 habitaciones y amplio estacionamiento con posibilidad de expansión para emprendimiento.
+
+Nombre: Departamento en Santiago
+Descripción: Departamento moderno en el centro de Santiago.
+
+Región: Región del Maule
+Nombre: Parcela en Linares
+Descripción: Parcela amplia con vista a la montaña en Linares.
+
+Región: Región de la Araucanía
+Nombre: Casa familiar
+Descripción: Amplia casa ubicada en barrio residencial, cercana a colegios y plantas de energia.
+

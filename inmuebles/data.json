@@ -1,0 +1,41 @@
+[
+    {
+    
+        "model": "inmueblesApp.inmueble",
+        "pk": 1,
+        "fields": {
+            "nombre": "Departamento en Santiago",
+            "descripcion": "Departamento moderno en el centro de Santiago.",
+            "m2_construidos": 80.0,
+            "m2_totales": 100.0,
+            "cantidad_estacionamientos": 1,
+            "cantidad_habitaciones": 2,
+            "cantidad_banos": 1,
+            "direccion": "Av. Providencia 123, Santiago",
+            "tipo_inmueble": 1,
+            "precio_mensual": 500000,
+            "arrendador": 1,
+            "region": 15,
+            "comuna": 33
+        }
+    },
+    {
+        "model": "inmueblesApp.inmueble",
+        "pk": 2,
+        "fields": {
+            "nombre": "Parcela en Linares",
+            "descripcion": "Parcela amplia con vista a la montaña en Linares.",
+            "m2_construidos": 0.0,
+            "m2_totales": 5000.0,
+            "cantidad_estacionamientos": 0,
+            "cantidad_habitaciones": 0,
+            "cantidad_banos": 0,
+            "direccion": "Camino a Linares Km. 5",
+            "tipo_inmueble": 2,
+            "precio_mensual": 200000,
+            "arrendador": 1,
+            "region": 8,
+            "comuna": 42
+        }
+    }
+]
