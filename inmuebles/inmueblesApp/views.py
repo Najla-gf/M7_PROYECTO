@@ -128,3 +128,23 @@ def obtener_comunas_por_region(request):
     region_id = request.GET.get('region_id')
     comunas = Comuna.objects.filter(region_id=region_id).values('id', 'nombre')
     return JsonResponse({'comunas': list(comunas)})
+
+#Modal para los detalles
+def inmueble_detalle_api(request, inmueble_id):
+    inmueble = get_object_or_404(Inmueble, id=inmueble_id)
+    data = {
+        'nombre': inmueble.nombre,
+        'descripcion': inmueble.descripcion,
+        'direccion': inmueble.direccion,
+        'comuna': {'id': inmueble.comuna.id, 'nombre': inmueble.comuna.nombre},
+        'region': {'id': inmueble.region.id, 'nombre': inmueble.region.nombre},
+        'm2_construidos': inmueble.m2_construidos,
+        'm2_totales': inmueble.m2_totales,
+        'cantidad_habitaciones': inmueble.cantidad_habitaciones,
+        'cantidad_banos': inmueble.cantidad_banos,
+        'cantidad_estacionamientos': inmueble.cantidad_estacionamientos,
+        'tipo_inmueble': {'id': inmueble.tipo_inmueble.id, 'nombre': inmueble.tipo_inmueble.nombre},
+        'arrendador': {'id': inmueble.arrendador.id, 'username': inmueble.arrendador.username},
+        'precio_mensual': inmueble.precio_mensual,
+    }
+    return JsonResponse(data)

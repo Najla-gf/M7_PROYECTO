@@ -16,12 +16,12 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">m2 construidos: {{ inmueble.m2_construidos }}</li>
                         <li class="list-group-item">m2 totales: {{ inmueble.m2_totales }}</li>
-                        <li class="list-group-item">habitaciones: {{ inmueble.cantidad_habitaciones }}</li>
-                        <li class="list-group-item">baños: {{ inmueble.cantidad_banos }}</li>
-                        <li class="list-group-item">estacionamientos: {{ inmueble.cantidad_estacionamientos }}</li>
+                        <li class="list-group-item">Habitaciones: {{ inmueble.cantidad_habitaciones }}</li>
+                        <li class="list-group-item">Baños: {{ inmueble.cantidad_banos }}</li>
+                        <li class="list-group-item">Estacionamientos: {{ inmueble.cantidad_estacionamientos }}</li>
+                        <li class="list-group-item">Tipo de inmueble: {{ inmueble.tipo_inmueble }}</li>
                         <li class="list-group-item">Publicado por: {{ inmueble.arrendador }}</li>
                     </ul>
-
                     <div class="card-footer"><strong>Precio mensual:</strong> ${{ inmueble.precio_mensual }}</div>
                     <a href="{% url 'editar_inmueble' inmueble.pk %}" class="btn btn-primary">Editar</a>
                     <a href="{% url 'borrar_inmueble' inmueble.pk %}" class="btn btn-danger">Borrar</a>

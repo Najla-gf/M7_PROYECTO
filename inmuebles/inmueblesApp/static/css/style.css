@@ -47,11 +47,11 @@ body {
 
 /* Estilo para los formularios de registro y actualización de perfiles */
 .profile-form {
-    background-color: rgba(107, 191, 176, 0.462);
+    background-color: rgba(107, 191, 176, 0.462); /* Fondo semitransparente */
     padding: 20px;
     border: 1px solid #F2DFCE; 
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
 .profile-form .form-label {
@@ -78,8 +78,9 @@ body {
 }
 
 .profile-form .btn-secondary:hover {
-    background-color: #F2DFCE;
-    border-color: #F2DFCE; 
+    color: #223459;
+    background-color: #FDC14D;
+    border-color: #FDC14D; 
 }
 
 /* FORMULARIOS */
@@ -106,6 +107,17 @@ body {
     border-color: #6BBFB0;
 }
 
+.btn-secondary {
+    background-color: #F2A950; /* Color del botón secundario */
+    border-color: #F2A950; 
+}
+
+.btn-secondary:hover {
+    color: #223459;
+    background-color: #FDC14D;
+    border-color: #FDC14D; 
+}
+
 /* Estilo para la tarjeta */
 .card {
     background-color: #FFFFFF; 
@@ -117,7 +129,6 @@ body {
     background-color: #223459; 
     color: #F2DFCE; 
 }
-
 
 /* FOOTER */
 footer {

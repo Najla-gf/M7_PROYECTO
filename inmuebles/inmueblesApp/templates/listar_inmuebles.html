@@ -37,11 +37,57 @@
                     <h5 class="card-title">{{ inmueble.nombre }}</h5>
                     <p class="card-text">{{ inmueble.descripcion }}</p>
                     <p class="card-text"><strong>Precio:</strong> ${{ inmueble.precio_mensual }}</p>
-                    <a href="#" class="btn btn-primary">Más detalles</a>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inmuebleModal"
+                        data-imagen="{{ inmueble.imagen_url }}"
+                        data-nombre="{{ inmueble.nombre }}"
+                        data-descripcion="{{ inmueble.descripcion }}"
+                        data-direccion="{{ inmueble.direccion }}"
+                        data-comuna="{{ inmueble.comuna.nombre }}"
+                        data-region="{{ inmueble.region.nombre }}"
+                        data-m2-construidos="{{ inmueble.m2_construidos }}"
+                        data-m2-totales="{{ inmueble.m2_totales }}"
+                        data-habitaciones="{{ inmueble.cantidad_habitaciones }}"
+                        data-banos="{{ inmueble.cantidad_banos }}"
+                        data-estacionamientos="{{ inmueble.cantidad_estacionamientos }}"
+                        data-tipo-inmueble="{{ inmueble.tipo_inmueble.nombre }}"
+                        data-arrendador="{{ inmueble.arrendador.username }}"
+                        data-precio="{{ inmueble.precio_mensual }}">Más detalles</button>
                 </div>
             </div>
         </div>
         {% endfor %}
+    </div>
+<!-- Modal -->
+    <div class="modal fade" id="inmuebleModal" tabindex="-1" aria-labelledby="inmuebleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="inmuebleModalLabel">Detalles del Inmueble</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImagen" class="img-fluid" alt="">
+                    <h5 class="card-title" id="modalNombre"></h5>
+                    <p class="card-text" id="modalDescripcion"></p>
+                    <p class="card-text" id="modalDireccion"></p>
+                    <p class="card-text"><span id="modalComuna"></span>, <span id="modalRegion"></span></p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">m2 construidos: <span id="modalM2Construidos"></span></li>
+                        <li class="list-group-item">m2 totales: <span id="modalM2Totales"></span></li>
+                        <li class="list-group-item">Habitaciones: <span id="modalHabitaciones"></span></li>
+                        <li class="list-group-item">Baños: <span id="modalBanos"></span></li>
+                        <li class="list-group-item">Estacionamientos: <span id="modalEstacionamientos"></span></li>
+                        <li class="list-group-item">Tipo de inmueble: <span id="modalTipoInmueble"></span></li>
+                        <li class="list-group-item">Publicado por: <span id="modalArrendador"></span></li>
+                    </ul>
+                    <div class="card-footer"><strong>Precio mensual:</strong> $<span id="modalPrecioMensual"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

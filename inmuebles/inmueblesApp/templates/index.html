@@ -1,7 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container mt-5">
-INICIO
-    </div>
+<div class="container mt-4">
+    {% if user.is_authenticated %}
+        <div class="alert alert-info text-center">
+            <h4 class="alert-heading">¡Bienvenid@, {{ user.usuario.nombres }}!</h4>
+            <p>
+                {% if user.usuario.tipo_usuario == 'arrendador' %}
+                    Como arrendador, puedes <a href="{% url 'agregar_inmueble' %}" class="btn btn-primary">agregar nuevos inmuebles</a> o 
+                    <a href="{% url 'listar_inmuebles' %}" class="btn btn-secondary">ver todos los inmuebles</a>.
+                {% elif user.usuario.tipo_usuario == 'arrendatario' %}
+                    Como arrendatario, puedes <a href="{% url 'listar_inmuebles' %}" class="btn btn-primary">buscar un lugar para vivir</a> o 
+                    <a href="{% url 'profile' %}" class="btn btn-secondary">ver tu perfil</a>.
+                {% endif %}
+            </p>
+        </div>
+    {% else %}
+        <div class="alert alert-info text-center">
+            <h4 class="alert-heading">¡Bienvenido a tu sitio web de Gestión de Inmuebles!</h4>
+            <p>
+                Para comenzar, por favor <a href="{% url 'login' %}" class="btn btn-primary">inicia sesión</a> para acceder a todas las funcionalidades.<br>
+                Si aún no tienes una cuenta, ¿qué esperas?<br> 
+                Regístrate <a href="{% url 'register' %}" class="btn btn-primary">AQUÍ</a>.
+            </p>
+        </div>
+    {% endif %}
 </div>
 {% endblock %}
