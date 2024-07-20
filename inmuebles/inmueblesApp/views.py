@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404 
+from django.http import JsonResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Usuario, Inmueble, Region, Comuna
@@ -122,3 +123,8 @@ def listar_inmuebles(request):
 
     return render(request, 'listar_inmuebles.html', {'inmuebles': inmuebles, 'regiones': regiones, 'comunas': comunas})
 
+# Vista para obtener comunas por región
+def obtener_comunas_por_region(request):
+    region_id = request.GET.get('region_id')
+    comunas = Comuna.objects.filter(region_id=region_id).values('id', 'nombre')
+    return JsonResponse({'comunas': list(comunas)})

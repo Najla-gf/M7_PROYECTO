@@ -14,5 +14,6 @@ urlpatterns = [
     path('inmueble/<int:pk>/editar/', views.editar_inmueble, name='editar_inmueble'),
     path('inmueble/<int:pk>/borrar/', views.borrar_inmueble, name='borrar_inmueble'),
     path('inmuebles/', views.listar_inmuebles, name='listar_inmuebles'),
+    path('api/comunas/', views.obtener_comunas_por_region, name='obtener_comunas_por_region'),
 ]
 
