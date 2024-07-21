@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Solicitudes de Arriendo</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Arrendatario</th>
+                <th>Inmueble</th>
+                <th>Mensaje</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for solicitud in solicitudes %}
+            <tr>
+                <td>{{ solicitud.arrendatario.user.username }}</td>
+                <td>{{ solicitud.inmueble.nombre }}</td>
+                <td>{{ solicitud.mensaje|truncatechars:50 }}</td>
+                <td>{{ solicitud.fecha_solicitud }}</td>
+                <td>
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#solicitudModal{{ solicitud.id }}">
+                        Ver
+                    </button>
+                    <a href="{% url 'borrar_solicitud_arriendo' solicitud.id %}" class="btn btn-danger">Borrar</a>
+                </td>
+            </tr>
+            <!-- Modal -->
+            <div class="modal fade" id="solicitudModal{{ solicitud.id }}" tabindex="-1" aria-labelledby="solicitudModalLabel{{ solicitud.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="solicitudModalLabel{{ solicitud.id }}">Solicitud de {{ solicitud.arrendatario.user.username }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Mensaje:</strong></p>
+                            <p>{{ solicitud.mensaje }}</p>
+                            <hr>
+                            <p><strong>Datos de contacto del arrendatario:</strong></p>
+                            <p><strong>Nombre:</strong> {{ solicitud.arrendatario.nombres }} {{ solicitud.arrendatario.apellidos }}</p>
+                            <p><strong>Correo electrónico:</strong> {{ solicitud.arrendatario.correo_electronico }}</p>
+                            <p><strong>Teléfono:</strong> {{ solicitud.arrendatario.telefono_personal }}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <a href="{% url 'borrar_solicitud_arriendo' solicitud.id %}" class="btn btn-danger">Borrar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'mis_inmuebles' %}" class="btn btn-secondary">Ver todos los inmuebles</a>
+</div>
+{% endblock %}

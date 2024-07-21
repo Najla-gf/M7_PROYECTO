@@ -66,4 +66,4 @@ class SolicitudArriendo(models.Model):
     mensaje = models.TextField(null=False, blank=False)
 
     def __str__(self):
-        return f"A {self.arrendatario} le interesa {self.inmueble} de {self.inmueble.arrendador}"
+        return f"A {self.arrendatario} le interesa {self.inmueble}"

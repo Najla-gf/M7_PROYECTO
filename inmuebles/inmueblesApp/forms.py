@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import Usuario, Inmueble
+from .models import Usuario, Inmueble, SolicitudArriendo
 
 class CrearUsuarioForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
@@ -8,7 +8,7 @@ class CrearUsuarioForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username', 'password']
+        fields = ['username']
         widgets = {
             'username': forms.TextInput(attrs={'class': 'form-control'}),
         }
@@ -93,4 +93,20 @@ class InmuebleForm(forms.ModelForm):
             'region': forms.Select(attrs={'class': 'form-control'}),
             'comuna': forms.Select(attrs={'class': 'form-control'}),
             'imagen_url': forms.URLInput(attrs={'class': 'form-control'}),
+        }
+
+
+class SolicitudArriendoForm(forms.ModelForm):
+    class Meta:
+        model = SolicitudArriendo
+        fields = ['mensaje']
+        widgets = {
+            'mensaje': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Escribe tu mensaje aquí...',
+                'rows': 4
+            })
+        }
+        labels = {
+            'mensaje': 'Mensaje'
         }

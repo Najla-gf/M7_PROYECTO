@@ -14,13 +14,6 @@
         <div class="col-12 text-center">
             <a href="{% url 'edit_profile' %}" class="btn btn-primary">Actualizar datos</a>
     </form>
-
-    {% if usuario.tipo_usuario == 'arrendador' %}
-    <a href="{% url 'mis_inmuebles' %}" class="btn btn-secondary">Mis Inmuebles</a>
-    {% endif %}
-    {% if usuario.tipo_usuario == 'arrendatario' %}
-    <a href="{% url 'listar_inmuebles' %}" class="btn btn-secondary">Ver Inmuebles</a>
-    {% endif %}
 </div>
 </div>
 {% endblock %}

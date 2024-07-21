@@ -81,9 +81,14 @@ def crear_solicitud_arriendo(arrendatario, inmueble, mensaje):
     solicitud.save()
     return solicitud
 
-# Listar todas las solicitudes de arriendo
-def listar_solicitudes_arriendo():
-    return SolicitudArriendo.objects.all()
+# Listar todas las solicitudes de arriendo para un arrendador específico
+def listar_solicitudes_arriendo_por_arrendador(arrendador):
+    return SolicitudArriendo.objects.filter(inmueble__arrendador=arrendador)
+
+# Borrar un registro del modelo SolicitudArriendo
+def borrar_solicitud_arriendo(solicitud_id):
+    solicitud = get_object_or_404(SolicitudArriendo, id=solicitud_id)
+    solicitud.delete()
 
 # Actualizar un registro en el modelo SolicitudArriendo
 def actualizar_solicitud_arriendo(solicitud_id, **kwargs):
@@ -93,7 +98,3 @@ def actualizar_solicitud_arriendo(solicitud_id, **kwargs):
     solicitud.save()
     return solicitud
 
-# Borrar un registro del modelo SolicitudArriendo
-def borrar_solicitud_arriendo(solicitud_id):
-    solicitud = get_object_or_404(SolicitudArriendo, id=solicitud_id)
-    solicitud.delete()

@@ -1,35 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var inmuebleModal = document.getElementById('inmuebleModal');
-    inmuebleModal.addEventListener('show.bs.modal', function(event) {
-        var button = event.relatedTarget;
-        var imagen = button.getAttribute('data-imagen');
-        var nombre = button.getAttribute('data-nombre');
-        var descripcion = button.getAttribute('data-descripcion');
-        var direccion = button.getAttribute('data-direccion');
-        var comuna = button.getAttribute('data-comuna');
-        var region = button.getAttribute('data-region');
-        var m2_construidos = button.getAttribute('data-m2-construidos');
-        var m2_totales = button.getAttribute('data-m2-totales');
-        var habitaciones = button.getAttribute('data-habitaciones');
-        var banos = button.getAttribute('data-banos');
-        var estacionamientos = button.getAttribute('data-estacionamientos');
-        var tipo_inmueble = button.getAttribute('data-tipo-inmueble');
-        var arrendador = button.getAttribute('data-arrendador');
-        var precio = button.getAttribute('data-precio');
-
-        document.getElementById('modalImagen').src = imagen;
-        document.getElementById('modalNombre').textContent = nombre;
-        document.getElementById('modalDescripcion').textContent = descripcion;
-        document.getElementById('modalDireccion').textContent = direccion;
-        document.getElementById('modalComuna').textContent = comuna;
-        document.getElementById('modalRegion').textContent = region;
-        document.getElementById('modalM2Construidos').textContent = m2_construidos;
-        document.getElementById('modalM2Totales').textContent = m2_totales;
-        document.getElementById('modalHabitaciones').textContent = habitaciones;
-        document.getElementById('modalBanos').textContent = banos;
-        document.getElementById('modalEstacionamientos').textContent = estacionamientos;
-        document.getElementById('modalTipoInmueble').textContent = tipo_inmueble;
-        document.getElementById('modalArrendador').textContent = arrendador;
-        document.getElementById('modalPrecioMensual').textContent = precio;
-    });
+document.addEventListener('DOMContentLoaded', function () {
+        var inmuebleModal = document.getElementById('inmuebleModal')
+        inmuebleModal.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget
+            var modal = this
+            modal.querySelector('#modalImagen').src = button.getAttribute('data-imagen')
+            modal.querySelector('#modalNombre').textContent = button.getAttribute('data-nombre')
+            modal.querySelector('#modalDescripcion').textContent = button.getAttribute('data-descripcion')
+            modal.querySelector('#modalDireccion').textContent = button.getAttribute('data-direccion')
+            modal.querySelector('#modalComuna').textContent = button.getAttribute('data-comuna')
+            modal.querySelector('#modalRegion').textContent = button.getAttribute('data-region')
+            modal.querySelector('#modalM2Construidos').textContent = button.getAttribute('data-m2-construidos')
+            modal.querySelector('#modalM2Totales').textContent = button.getAttribute('data-m2-totales')
+            modal.querySelector('#modalHabitaciones').textContent = button.getAttribute('data-habitaciones')
+            modal.querySelector('#modalBanos').textContent = button.getAttribute('data-banos')
+            modal.querySelector('#modalEstacionamientos').textContent = button.getAttribute('data-estacionamientos')
+            modal.querySelector('#modalTipoInmueble').textContent = button.getAttribute('data-tipo-inmueble')
+            modal.querySelector('#modalArrendador').textContent = button.getAttribute('data-arrendador')
+            modal.querySelector('#modalPrecioMensual').textContent = button.getAttribute('data-precio')
+        })
 });
+

@@ -47,19 +47,29 @@
             </div>
             <div class="col-md-6">
                 <label for="id_region" class="form-label">Región</label>
-                {{ form.region }}
+                <select name="region" id="region" class="form-control">
+                    <option value="">Selecciona una región</option>
+                    {% for region in regiones %}
+                    <option value="{{ region.id }}">{{ region.nombre }}</option>
+                    {% endfor %}
+                </select>
             </div>
             <div class="col-md-6">
                 <label for="id_comuna" class="form-label">Comuna</label>
-                {{ form.comuna }}
+                <select name="comuna" id="comuna" class="form-control">
+                    <option value="">Selecciona una comuna</option>
+                    {% for comuna in comunas %}
+                    <option value="{{ comuna.id }}" {% if request.GET.comuna == comuna.id|stringformat:'s' %}selected{% endif %}>{{ comuna.nombre }}</option>
+                    {% endfor %}
+                </select>
             </div>
             <div class="col-md-6">
                 <label for="id_imagen_url" class="form-label">URL de la Imagen</label>
                 {{ form.imagen_url }}
             </div>
-            <div class="col-4 text-center">
+            <div class="col-12 text-center">
                 <button type="submit" class="btn btn-primary">Guardar</button>
-                <a href="{% url 'profile' %}" class="btn btn-secondary">Cancelar</a>
+                <a href="{% url 'mis_inmuebles' %}" class="btn btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Enviar solicitud de arriendo</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ inmueble.nombre }}</h5>
+            <form method="post" class="profile-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <a href="{% url 'listar_inmuebles' %}" class="btn btn-secondary">Volver</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -16,5 +16,7 @@ urlpatterns = [
     path('inmuebles/', views.listar_inmuebles, name='listar_inmuebles'),
     path('api/comunas/', views.obtener_comunas_por_region, name='obtener_comunas_por_region'),
     path('api/inmuebles/<int:inmueble_id>/', views.inmueble_detalle_api, name='inmueble_detalle_api'),
+    path('solicitud_arriendo/<int:inmueble_id>/', views.solicitud_arriendo_view, name='solicitud_arriendo_view'),
+    path('solicitudes_arriendo/', views.listar_solicitudes_arriendo_view, name='listar_solicitudes_arriendo'),
+    path('solicitudes_arriendo/borrar/<int:solicitud_id>/', views.borrar_solicitud_arriendo_view, name='borrar_solicitud_arriendo'),
 ]
-

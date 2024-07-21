@@ -1,23 +1,17 @@
 /* Estilo global para el fondo de la página */
 body {
-    background-color: #FDE8D5; /* Color de fondo */
+    background-color: #FDE8D5;
     position: relative;
-    overflow-x: hidden; /* Evita el desbordamiento horizontal */
-    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos la altura completa de la ventana */
     padding-bottom: 80px; /* Espacio inferior para que el contenido no quede oculto por el footer */
 }
 
 .background-image {
     position: fixed;
     bottom: 0;
-    right: 0; /* Cambiado a la esquina inferior derecha */
-    width: 50%;
-    height: 50%;
-    background-image: url('/static/img/fondo.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    z-index: -1; /* Asegúrate de que la imagen esté detrás del contenido */
+    right: 0;
+    width: 50%; /* Ajusta el tamaño al 50% */
+    height: auto; /* Mantiene la proporción de la imagen */
+    z-index: -1; /* Asegura que la imagen quede detrás del contenido */
 }
 
 /* NAVBAR */
@@ -118,6 +112,16 @@ body {
     border-color: #FDC14D; 
 }
 
+.btn-tertiary {
+    background-color: #2A9D8F; 
+    border-color: #2A9D8F;
+}
+
+.btn-tertiary:hover {
+    background-color: #21867A;
+    border-color: #21867A;
+}
+
 /* Estilo para la tarjeta */
 .card {
     background-color: #FFFFFF; 
@@ -129,6 +133,34 @@ body {
     background-color: #223459; 
     color: #F2DFCE; 
 }
+
+/* ESTILO PARA MODAL */
+.modal-body {
+    background-color: #FDE8D5; /* Fondo del cuerpo del modal */
+}
+
+.modal-header, .modal-footer {
+    background-color: #223459; /* Fondo de la cabecera y el pie del modal */
+}
+
+.modal-title {
+    color: #F2DFCE; /* Color del título del modal */
+}
+
+.btn-close {
+    color: #124559; /* Color del botón de cerrar */
+}
+
+.btn-info {
+    background-color: #6BBFB0;
+    border-color: #6BBFB0;
+}
+
+.btn-info:hover {
+    background-color: #124559;
+    border-color: #124559;
+}
+
 
 /* FOOTER */
 footer {

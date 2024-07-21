@@ -1,11 +1,77 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container my-4">
-    <h2>Editar Inmueble</h2>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Actualizar Inmueble</button>
-    </form>
+    <div class="profile-form">
+        <h2>Editar Inmueble</h2>
+        <form method="POST" enctype="multipart/form-data" class="row g-3">
+            {% csrf_token %}
+            <div class="col-md-6">
+                <label for="id_nombre" class="form-label">Nombre</label>
+                {{ form.nombre }}
+            </div>
+            <div class="col-md-6">
+                <label for="id_descripcion" class="form-label">Descripción</label>
+                {{ form.descripcion }}
+            </div>
+            <div class="col-md-6">
+                <label for="id_m2_construidos" class="form-label">M² Construidos</label>
+                {{ form.m2_construidos }}
+            </div>
+            <div class="col-md-6">
+                <label for="id_m2_totales" class="form-label">M² Totales</label>
+                {{ form.m2_totales }}
+            </div>
+            <div class="col-md-6">
+                <label for="id_cantidad_estacionamientos" class="form-label">Cantidad de Estacionamientos</label>
+                {{ form.cantidad_estacionamientos }}
+            </div>
+            <div class="col-md-6">
+                <label for="id_cantidad_habitaciones" class="form-label">Cantidad de Habitaciones</label>
+                {{ form.cantidad_habitaciones }}
+            </div>
+            <div class="col-md-6">
+                <label for="id_cantidad_banos" class="form-label">Cantidad de Baños</label>
+                {{ form.cantidad_banos }}
+            </div>
+            <div class="col-md-6">
+                <label for="id_direccion" class="form-label">Dirección</label>
+                {{ form.direccion }}
+            </div>
+            <div class="col-md-6">
+                <label for="id_tipo_inmueble" class="form-label">Tipo de Inmueble</label>
+                {{ form.tipo_inmueble }}
+            </div>
+            <div class="col-md-6">
+                <label for="id_precio_mensual" class="form-label">Precio Mensual</label>
+                {{ form.precio_mensual }}
+            </div>
+            <div class="col-md-6">
+                <label for="id_region" class="form-label">Región</label>
+                <select name="region" id="region" class="form-control">
+                    <option value="">Selecciona una región</option>
+                    {% for region in regiones %}
+                    <option value="{{ region.id }}">{{ region.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="id_comuna" class="form-label">Comuna</label>
+                <select name="comuna" id="comuna" class="form-control">
+                    <option value="">Selecciona una comuna</option>
+                    {% for comuna in comunas %}
+                    <option value="{{ comuna.id }}" {% if request.GET.comuna == comuna.id|stringformat:'s' %}selected{% endif %}>{{ comuna.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="id_imagen_url" class="form-label">URL de la Imagen</label>
+                {{ form.imagen_url }}
+            </div>
+            <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary">Actualizar Inmueble</button>
+            <a href="{% url 'mis_inmuebles' %}" class="btn btn-secondary">Descartar cambios</a>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}
