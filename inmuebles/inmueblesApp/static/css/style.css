@@ -54,11 +54,11 @@ body {
 }
 
 .profile-form .form-label {
-    color: #223459; /* Color del texto de las etiquetas */
+    color: #223459;
 }
 
 .profile-form .form-control {
-    border-color: #124559; /* Color del borde del campo */
+    border-color: #124559; 
 }
 
 .profile-form .btn-primary {
@@ -141,19 +141,19 @@ body {
 
 /* ESTILO PARA MODAL */
 .modal-body {
-    background-color: #FDE8D5; /* Fondo del cuerpo del modal */
+    background-color: #FDE8D5;
 }
 
 .modal-header, .modal-footer {
-    background-color: #223459; /* Fondo de la cabecera y el pie del modal */
+    background-color: #223459;
 }
 
 .modal-title {
-    color: #F2DFCE; /* Color del título del modal */
+    color: #F2DFCE;
 }
 
 .btn-close {
-    color: #124559; /* Color del botón de cerrar */
+    color: #124559;
 }
 
 .btn-info {

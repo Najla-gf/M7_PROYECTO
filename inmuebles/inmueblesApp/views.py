@@ -32,8 +32,6 @@ def profile(request):
         if form.is_valid():
             form.save()
             return redirect('profile')
-        else:
-            messages.error(request, 'Credenciales incorrectas, intente nuevamente.')
     else:
         form = UsuarioForm(instance=usuario)
     
