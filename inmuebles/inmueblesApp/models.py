@@ -54,7 +54,7 @@ class Inmueble(models.Model):
     arrendador = models.ForeignKey(Usuario, on_delete=models.CASCADE, limit_choices_to={'tipo_usuario': 'arrendador'})
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
     comuna = models.ForeignKey(Comuna, on_delete=models.CASCADE)
-    imagen_url = models.URLField(max_length=200, null=True, blank=True)
+    imagen_url = models.URLField(max_length=200, null=True, blank=True, default='https://guttche.cl/wp-content/uploads/2024/01/sinfoto.png')
 
     def __str__(self):
         return f"{self.nombre} en {self.comuna}, {self.region}. Publicado por {self.arrendador}"

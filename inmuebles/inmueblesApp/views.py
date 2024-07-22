@@ -32,6 +32,8 @@ def profile(request):
         if form.is_valid():
             form.save()
             return redirect('profile')
+        else:
+            messages.error(request, 'Credenciales incorrectas, intente nuevamente.')
     else:
         form = UsuarioForm(instance=usuario)
     
@@ -92,12 +94,16 @@ def editar_inmueble(request, pk):
             form.save()
             messages.success(request, 'Inmueble actualizado exitosamente')
             return redirect('mis_inmuebles')
+        else:
+            messages.error(request, 'Por favor corrige los errores en el formulario')
     else:
         form = InmuebleForm(instance=inmueble)
     
     regiones = Region.objects.all()
-    return render(request, 'editar_inmueble.html', {'form': form, 'regiones': regiones})
-
+    comunas = Comuna.objects.filter(region=inmueble.region)  # Filtrar comunas por la región del inmueble
+    
+    return render(request, 'editar_inmueble.html', {'form': form, 'regiones': regiones, 'comunas': comunas})
+    
 #Borrar inmueble
 @login_required
 def borrar_inmueble(request, pk):

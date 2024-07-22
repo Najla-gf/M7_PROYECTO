@@ -36,6 +36,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ inmueble.nombre }}</h5>
                     <p class="card-text">{{ inmueble.descripcion }}</p>
+                    <p class="card-text">Publicado por: {{ inmueble.arrendador }}</p>
                     <p class="card-text"><strong>Precio:</strong> ${{ inmueble.precio_mensual }}</p>
                     <a href="{% url 'solicitud_arriendo_view' inmueble.id %}" class="btn btn-primary">Me interesa</a>
                     <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#inmuebleModal"

@@ -11,8 +11,8 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ inmueble.nombre }}</h5>
                     <p class="card-text">{{ inmueble.descripcion }}</p>
-                    <p class="card-text">{{ inmueble.direccion }}</p>
-                    <p class="card-text">{{ inmueble.comuna }}, {{ inmueble.region }}</p>
+                    <p class="card-text"><i class="fa-solid fa-map-location-dot"></i> {{ inmueble.direccion }}</p>
+                    <p class="card-text"><i class="fa-solid fa-location-dot"></i> {{ inmueble.comuna }}, {{ inmueble.region }}</p>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">m2 construidos: {{ inmueble.m2_construidos }}</li>
                         <li class="list-group-item">m2 totales: {{ inmueble.m2_totales }}</li>

@@ -23,6 +23,11 @@ body {
     color: #F2DFCE;
 }
 
+.navbar-title:hover {
+    color: #F2A950;
+}
+
+
 .nav-link {
     color: #FDE8D5; 
 }
