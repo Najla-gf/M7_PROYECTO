@@ -1,3 +1,8 @@
+## Proyecto manejo del CRUD
+Una empresa dedicada al arriendo de inmuebles requiere de su ayuda para crear un sitio web donde usuarios puedan revisar inmuebles disponibles para el arriendo, separado por comuna y región. El sitio web poseerá dos tipos de usuarios: arrendatarios y arrendadores.
+
+---
+
 # Comandos del proyecto
 
 ## Paso 1: Crear y activar el entorno virtual
