@@ -38,6 +38,8 @@
                     <p class="card-text">{{ inmueble.descripcion }}</p>
                     <p class="card-text">Publicado por: {{ inmueble.arrendador }}</p>
                     <p class="card-text"><strong>Precio:</strong> ${{ inmueble.precio_mensual }}</p>
+                    <p class="card-text"><i class="fa-solid fa-map-location-dot"></i> {{ inmueble.direccion }}</p>
+                    <p class="card-text"><i class="fa-solid fa-location-dot"></i> {{ inmueble.comuna }}, {{ inmueble.region }}</p>
                     <a href="{% url 'solicitud_arriendo_view' inmueble.id %}" class="btn btn-primary">Me interesa</a>
                     <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#inmuebleModal"
                         data-imagen="{{ inmueble.imagen_url }}"
